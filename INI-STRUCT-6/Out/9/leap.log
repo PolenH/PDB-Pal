@@ -1,0 +1,2638 @@
+log started: Tue Jul 23 17:05:06 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.gaff2
+----- Source: /software/ambertools/22/amber22/dat/leap/cmd/leaprc.gaff2
+----- Source of /software/ambertools/22/amber22/dat/leap/cmd/leaprc.gaff2 done
+>> logFile leap.log
+log started: Tue Jul 23 17:05:06 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cs"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "n5"  "N" "sp3" }
+>> 	{ "n6"  "N" "sp3" }
+>> 	{ "n7"  "N" "sp3" }
+>> 	{ "n8"  "N" "sp3" }
+>> 	{ "n9"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "ns"  "N" "sp2" }
+>> 	{ "nt"  "N" "sp2" }
+>> 	{ "nu"  "N" "sp2" }
+>> 	{ "nv"  "N" "sp2" }
+>> 	{ "nx"  "N" "sp3" }
+>> 	{ "ny"  "N" "sp3" }
+>> 	{ "nz"  "N" "sp3" }
+>> 	{ "n+"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff2.dat
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+(UNKNOWN ATOM TYPE: c6)
+> 
+> source leaprc.water.tip3p
+----- Source: /software/ambertools/22/amber22/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /software/ambertools/22/amber22/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> loadamberparams	frcmod.ionslm_1264_opc
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ionslm_1264_opc
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of atomic ions for the OPC water model (12-6-4 set)
+> 
+> loadamberparams INI.frcmod
+Loading parameters: ./INI.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> 
+> INI = loadMol2 INI.mol2
+Loading Mol2 file: ./INI.mol2
+Reading MOLECULE named TPP
+> 
+> protein = loadPDB protein_amber.pdb
+Loading PDB file: ./protein_amber.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue MET, term: Terminal/beginning, seq. number: 0 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 555 to: CLEU.
+Mapped residue MET, term: Terminal/beginning, seq. number: 556 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 1111 to: CLEU.
+  total atoms in file: 17267
+> mg = loadPDB MG_amber.pdb
+Loading PDB file: ./MG_amber.pdb
+Matching PDB residue names to LEaP variables.
+Starting new chain with MG
+  total atoms in file: 2
+> water = loadPDB solvent_amber.pdb
+Loading PDB file: ./solvent_amber.pdb
+Matching PDB residue names to LEaP variables.
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 1347
+> 
+> com = combine {protein mg water INI}
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: TPP
+> 
+> saveamberparm com complex_dry.prmtop complex_dry.inpcrd
+Checking Unit.
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+The unperturbed charge of the unit (-8.998000) is not zero.
+
+/software/ambertools/22/amber22/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 3580 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	2
+	NMET	2
+	TPP	1
+	WAT	449
+  )
+ (no restraints)
+> 
+> savePdb com initial_system_dry.pdb
+Writing pdb file: initial_system_dry.pdb
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+> 
+> solvatebox com TIP3PBOX 12.0 iso
+  Solute vdw bounding box:              114.448 86.213 70.014
+  Total bounding box for atom centers:  138.448 138.448 138.448
+      (box expansion for 'iso' is  85.0%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 2832027.408 A^3 
+  Total mass 1523318.502 amu,  Density 0.893 g/cc
+  Added 77258 residues.
+> addIonsRand com  Na+ 0
+9 Na+ ions required to neutralize.
+Adding 9 counter ions to "com". 77698 solvent molecules will remain.
+0: Placed Na+ in com at (-24.48, 57.76, -53.32).
+0: Placed Na+ in com at (-5.70, 19.29, -37.38).
+0: Placed Na+ in com at (-30.28, 54.86, -17.61).
+0: Placed Na+ in com at (-17.23, -12.28, 53.84).
+0: Placed Na+ in com at (-2.56, -41.48, 68.48).
+0: Placed Na+ in com at (-12.11, -24.30, 47.81).
+0: Placed Na+ in com at (-45.73, -47.28, -51.00).
+0: Placed Na+ in com at (28.06, -56.66, -0.18).
+0: Placed Na+ in com at (61.67, 59.82, 35.19).
+> addIonsRand com Na+ 82 Cl- 82
+Adding 164 counter ions to "com". 77534 solvent molecules will remain.
+0: Placed Na+ in com at (15.50, 36.44, -48.92).
+Placed Cl- in com at (-66.58, -7.82, -4.70).
+0: Placed Na+ in com at (12.23, -14.02, -42.84).
+Placed Cl- in com at (-53.08, 54.59, -41.66).
+0: Placed Na+ in com at (57.48, 36.50, 25.60).
+Placed Cl- in com at (19.89, -39.64, -44.84).
+0: Placed Na+ in com at (-34.15, -42.23, -38.78).
+Placed Cl- in com at (-25.60, 58.09, 54.09).
+0: Placed Na+ in com at (-63.50, -20.07, -41.60).
+Placed Cl- in com at (21.31, -31.97, -14.15).
+0: Placed Na+ in com at (-49.85, -55.22, 18.36).
+Placed Cl- in com at (-7.03, -48.93, 36.59).
+0: Placed Na+ in com at (14.60, 5.23, 47.45).
+Placed Cl- in com at (-58.34, 53.73, 15.77).
+0: Placed Na+ in com at (42.77, 51.70, 43.96).
+Placed Cl- in com at (-10.94, 66.49, 24.57).
+0: Placed Na+ in com at (-64.19, 33.55, 6.80).
+Placed Cl- in com at (27.46, -38.37, 62.74).
+0: Placed Na+ in com at (54.41, -22.48, 42.48).
+Placed Cl- in com at (49.12, 8.16, 48.99).
+0: Placed Na+ in com at (-67.83, -20.24, 1.16).
+Placed Cl- in com at (45.86, -28.65, 11.59).
+0: Placed Na+ in com at (62.37, 36.32, 62.26).
+Placed Cl- in com at (-11.50, 54.86, 19.94).
+0: Placed Na+ in com at (1.05, -4.57, 61.54).
+Placed Cl- in com at (38.08, -63.47, 30.18).
+0: Placed Na+ in com at (-47.04, -56.66, 56.15).
+Placed Cl- in com at (-60.45, -31.66, 53.27).
+0: Placed Na+ in com at (-35.19, -31.46, -26.65).
+Placed Cl- in com at (-42.75, -19.78, -14.62).
+0: Placed Na+ in com at (30.37, 2.72, -67.95).
+Placed Cl- in com at (42.21, -45.77, -54.77).
+0: Placed Na+ in com at (35.15, -55.23, -17.63).
+Placed Cl- in com at (-61.82, 34.05, -53.61).
+0: Placed Na+ in com at (-53.62, -50.86, 58.02).
+Placed Cl- in com at (49.29, 7.39, -57.28).
+0: Placed Na+ in com at (-36.43, 35.46, -63.61).
+Placed Cl- in com at (18.36, -57.43, 13.95).
+0: Placed Na+ in com at (-2.81, 0.74, 41.38).
+Placed Cl- in com at (-33.44, 52.21, 29.81).
+0: Placed Na+ in com at (40.44, 27.23, 43.15).
+Placed Cl- in com at (-42.26, 63.10, -43.08).
+0: Placed Na+ in com at (43.93, -21.74, 17.70).
+Placed Cl- in com at (41.41, 61.04, 8.80).
+0: Placed Na+ in com at (8.48, 38.97, -33.68).
+Placed Cl- in com at (-32.92, 30.92, -14.27).
+0: Placed Na+ in com at (7.61, 2.67, 57.77).
+Placed Cl- in com at (34.74, 57.06, 3.83).
+0: Placed Na+ in com at (-17.66, -39.64, 49.04).
+Placed Cl- in com at (64.52, 57.30, -47.74).
+0: Placed Na+ in com at (16.75, -21.36, 34.55).
+Placed Cl- in com at (-67.26, 47.71, -31.75).
+0: Placed Na+ in com at (-13.55, 51.70, -31.14).
+Placed Cl- in com at (0.89, 47.36, 55.02).
+0: Placed Na+ in com at (37.14, -38.65, 32.72).
+Placed Cl- in com at (-65.81, -37.89, 37.37).
+0: Placed Na+ in com at (-4.17, 42.78, -65.20).
+Placed Cl- in com at (18.65, -51.02, -42.63).
+0: Placed Na+ in com at (-45.33, 5.57, 7.34).
+Placed Cl- in com at (-29.61, -7.56, 35.78).
+0: Placed Na+ in com at (26.89, -54.27, -24.10).
+Placed Cl- in com at (-53.97, -36.03, 38.29).
+0: Placed Na+ in com at (-12.30, 54.17, -45.92).
+Placed Cl- in com at (23.68, 43.89, -44.44).
+0: Placed Na+ in com at (56.54, 24.88, -18.00).
+Placed Cl- in com at (-29.24, -28.65, -44.73).
+0: Placed Na+ in com at (13.07, -17.34, 40.55).
+Placed Cl- in com at (43.30, -43.33, 54.47).
+0: Placed Na+ in com at (33.39, 48.15, -31.73).
+Placed Cl- in com at (-12.39, -59.29, 55.25).
+0: Placed Na+ in com at (-35.01, 5.58, -32.93).
+Placed Cl- in com at (-20.70, 63.54, -24.96).
+0: Placed Na+ in com at (63.92, -67.27, 36.15).
+Placed Cl- in com at (17.59, 5.02, 45.09).
+0: Placed Na+ in com at (-22.29, -4.81, 57.79).
+Placed Cl- in com at (-46.55, -19.89, 3.07).
+0: Placed Na+ in com at (62.88, -49.19, -27.56).
+Placed Cl- in com at (-18.18, -43.65, -61.15).
+0: Placed Na+ in com at (6.10, 45.49, -61.19).
+Placed Cl- in com at (61.68, 46.78, 55.49).
+0: Placed Na+ in com at (-61.82, -3.50, -34.83).
+Placed Cl- in com at (40.95, -42.23, 17.55).
+0: Placed Na+ in com at (1.12, -58.41, 11.49).
+Placed Cl- in com at (-31.46, -44.91, -25.12).
+0: Placed Na+ in com at (49.99, 61.16, -1.83).
+Placed Cl- in com at (24.88, -10.84, -42.42).
+0: Placed Na+ in com at (-32.32, -4.63, -49.91).
+Placed Cl- in com at (-26.97, -51.01, -54.01).
+0: Placed Na+ in com at (33.14, -34.26, 7.12).
+Placed Cl- in com at (7.79, 68.85, -17.75).
+0: Placed Na+ in com at (67.18, -28.87, -22.09).
+Placed Cl- in com at (62.43, -67.16, 13.91).
+0: Placed Na+ in com at (50.24, -37.21, 31.64).
+Placed Cl- in com at (-12.58, -46.76, 26.88).
+0: Placed Na+ in com at (-4.54, 45.89, -38.22).
+Placed Cl- in com at (-14.11, -26.99, -54.77).
+0: Placed Na+ in com at (14.75, -39.50, -42.39).
+Placed Cl- in com at (65.34, 33.30, -19.43).
+0: Placed Na+ in com at (23.17, -33.82, 56.79).
+Placed Cl- in com at (-63.12, -66.56, -67.02).
+0: Placed Na+ in com at (60.71, 22.50, 19.24).
+Placed Cl- in com at (-18.61, 25.18, 60.11).
+0: Placed Na+ in com at (-43.76, -9.52, 10.65).
+Placed Cl- in com at (-31.00, 7.13, 47.53).
+0: Placed Na+ in com at (-63.50, 59.04, 63.47).
+Placed Cl- in com at (45.34, 50.08, -36.52).
+0: Placed Na+ in com at (2.71, 24.24, -54.63).
+Placed Cl- in com at (-22.93, 66.92, -12.95).
+0: Placed Na+ in com at (-44.91, -61.42, 30.52).
+Placed Cl- in com at (60.06, 19.28, 43.82).
+0: Placed Na+ in com at (4.84, -35.77, 51.80).
+Placed Cl- in com at (-60.45, 24.67, -40.60).
+0: Placed Na+ in com at (64.85, 13.16, 24.96).
+Placed Cl- in com at (26.56, -6.24, -36.52).
+0: Placed Na+ in com at (-20.45, 9.99, -62.80).
+Placed Cl- in com at (-55.20, -2.09, -26.06).
+0: Placed Na+ in com at (21.48, 5.46, -54.63).
+Placed Cl- in com at (15.85, 55.21, 37.20).
+0: Placed Na+ in com at (8.01, -51.49, 47.39).
+Placed Cl- in com at (58.10, -54.77, 23.11).
+0: Placed Na+ in com at (64.52, 0.97, -10.19).
+Placed Cl- in com at (-32.64, -68.76, -44.44).
+0: Placed Na+ in com at (40.72, -57.78, -19.02).
+Placed Cl- in com at (-8.73, -3.34, -35.82).
+0: Placed Na+ in com at (14.13, 14.72, -47.59).
+Placed Cl- in com at (-11.21, -50.33, -50.62).
+0: Placed Na+ in com at (39.91, 62.41, 67.22).
+Placed Cl- in com at (44.95, 39.90, -45.48).
+0: Placed Na+ in com at (41.71, -19.41, -28.21).
+Placed Cl- in com at (-34.68, -60.69, 13.62).
+0: Placed Na+ in com at (6.19, 47.11, -67.00).
+Placed Cl- in com at (-32.69, 44.08, 53.89).
+0: Placed Na+ in com at (-36.43, 54.23, -44.84).
+Placed Cl- in com at (21.43, 29.37, -33.74).
+0: Placed Na+ in com at (51.11, -68.19, 40.29).
+Placed Cl- in com at (-23.98, -38.56, -52.17).
+0: Placed Na+ in com at (7.62, 24.00, -39.61).
+Placed Cl- in com at (1.04, -19.56, 39.79).
+0: Placed Na+ in com at (8.00, 24.83, -30.45).
+Placed Cl- in com at (23.93, -11.85, -49.61).
+0: Placed Na+ in com at (-24.36, -41.85, 14.95).
+Placed Cl- in com at (-49.77, -67.96, 28.76).
+0: Placed Na+ in com at (-60.01, -62.15, -38.76).
+Placed Cl- in com at (48.25, -4.74, -40.39).
+0: Placed Na+ in com at (58.79, 56.77, -39.67).
+Placed Cl- in com at (-58.24, 25.99, 68.91).
+0: Placed Na+ in com at (49.99, -62.70, 8.78).
+Placed Cl- in com at (-18.89, 24.08, -5.09).
+0: Placed Na+ in com at (67.31, 43.12, -11.43).
+Placed Cl- in com at (14.69, -28.68, 26.77).
+0: Placed Na+ in com at (-28.33, -20.04, -45.09).
+Placed Cl- in com at (-56.64, 67.85, 46.01).
+0: Placed Na+ in com at (49.55, 32.20, 18.48).
+Placed Cl- in com at (-6.33, -51.48, 16.95).
+0: Placed Na+ in com at (46.23, -57.14, 25.19).
+Placed Cl- in com at (-9.21, 50.63, 40.96).
+0: Placed Na+ in com at (-54.53, -55.40, 13.38).
+Placed Cl- in com at (-33.81, -55.82, 62.59).
+0: Placed Na+ in com at (-31.00, 63.46, -8.79).
+Placed Cl- in com at (53.05, 17.66, 44.95).
+0: Placed Na+ in com at (-64.96, 15.67, -5.75).
+Placed Cl- in com at (34.61, 45.76, -54.12).
+0: Placed Na+ in com at (47.91, -39.32, 27.13).
+Placed Cl- in com at (17.99, -42.40, -17.66).
+> 
+> saveamberparm com complex_solvated.prmtop complex_solvated.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 3580 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	2
+	NMET	2
+	TPP	1
+	WAT	77534
+  )
+ (no restraints)
+> 
+> savePdb com initial_system_solvated.pdb
+Writing pdb file: initial_system_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+> 
+ quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 9; Notes = 1.
+log started: Wed Jul 24 13:26:28 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.gaff2
+----- Source: /software/ambertools/22/amber22/dat/leap/cmd/leaprc.gaff2
+----- Source of /software/ambertools/22/amber22/dat/leap/cmd/leaprc.gaff2 done
+>> logFile leap.log
+log started: Wed Jul 24 13:26:28 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cs"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "n5"  "N" "sp3" }
+>> 	{ "n6"  "N" "sp3" }
+>> 	{ "n7"  "N" "sp3" }
+>> 	{ "n8"  "N" "sp3" }
+>> 	{ "n9"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "ns"  "N" "sp2" }
+>> 	{ "nt"  "N" "sp2" }
+>> 	{ "nu"  "N" "sp2" }
+>> 	{ "nv"  "N" "sp2" }
+>> 	{ "nx"  "N" "sp3" }
+>> 	{ "ny"  "N" "sp3" }
+>> 	{ "nz"  "N" "sp3" }
+>> 	{ "n+"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff2.dat
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/gaff2.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)
+(UNKNOWN ATOM TYPE: c6)
+> 
+> source leaprc.water.tip3p
+----- Source: /software/ambertools/22/amber22/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /software/ambertools/22/amber22/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /software/ambertools/22/amber22/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> loadamberparams	frcmod.ionslm_1264_opc
+Loading parameters: /software/ambertools/22/amber22/dat/leap/parm/frcmod.ionslm_1264_opc
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of atomic ions for the OPC water model (12-6-4 set)
+> 
+> loadamberparams INI.frcmod
+Loading parameters: ./INI.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> 
+> INI = loadMol2 INI.mol2
+Loading Mol2 file: ./INI.mol2
+Reading MOLECULE named TPP
+> 
+> protein = loadPDB protein_amber.pdb
+Loading PDB file: ./protein_amber.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue MET, term: Terminal/beginning, seq. number: 0 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 555 to: CLEU.
+Mapped residue MET, term: Terminal/beginning, seq. number: 556 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 1111 to: CLEU.
+  total atoms in file: 17267
+> mg = loadPDB MG_amber.pdb
+Loading PDB file: ./MG_amber.pdb
+Matching PDB residue names to LEaP variables.
+Starting new chain with MG
+  total atoms in file: 2
+> water = loadPDB solvent_amber.pdb
+Loading PDB file: ./solvent_amber.pdb
+Matching PDB residue names to LEaP variables.
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 1347
+> 
+> com = combine {protein mg water INI}
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: default_name
+  Sequence: TPP
+> 
+> saveamberparm com complex_dry.prmtop complex_dry.inpcrd
+Checking Unit.
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+The unperturbed charge of the unit (-8.998000) is not zero.
+
+/software/ambertools/22/amber22/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 3580 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	2
+	NMET	2
+	TPP	1
+	WAT	449
+  )
+ (no restraints)
+> 
+> savePdb com initial_system_dry.pdb
+Writing pdb file: initial_system_dry.pdb
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+> 
+> solvatebox com TIP3PBOX 12.0 iso
+  Solute vdw bounding box:              114.448 86.213 70.014
+  Total bounding box for atom centers:  138.448 138.448 138.448
+      (box expansion for 'iso' is  85.0%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 2832027.408 A^3 
+  Total mass 1523318.502 amu,  Density 0.893 g/cc
+  Added 77258 residues.
+> addIonsRand com  Na+ 0
+9 Na+ ions required to neutralize.
+Adding 9 counter ions to "com". 77698 solvent molecules will remain.
+0: Placed Na+ in com at (-31.07, 54.17, 47.95).
+0: Placed Na+ in com at (-2.56, 52.40, -62.94).
+0: Placed Na+ in com at (-1.32, 67.00, -52.71).
+0: Placed Na+ in com at (-57.36, 13.78, -58.94).
+0: Placed Na+ in com at (-64.24, -47.64, -40.87).
+0: Placed Na+ in com at (-9.00, 36.43, -34.48).
+0: Placed Na+ in com at (22.94, 55.69, -65.76).
+0: Placed Na+ in com at (-56.30, 20.93, -9.21).
+0: Placed Na+ in com at (-18.04, 58.59, 34.51).
+> addIonsRand com Na+ 82 Cl- 82
+Adding 164 counter ions to "com". 77534 solvent molecules will remain.
+0: Placed Na+ in com at (-68.43, 32.03, -27.28).
+Placed Cl- in com at (0.21, 62.42, 19.55).
+0: Placed Na+ in com at (22.02, 54.59, 14.67).
+Placed Cl- in com at (41.68, -26.93, -26.71).
+0: Placed Na+ in com at (44.02, 19.87, 37.14).
+Placed Cl- in com at (61.62, 13.38, -4.53).
+0: Placed Na+ in com at (-59.66, 31.69, -4.90).
+Placed Cl- in com at (-67.70, 58.67, 10.84).
+0: Placed Na+ in com at (-34.38, 54.87, -37.79).
+Placed Cl- in com at (17.67, 42.22, 47.84).
+0: Placed Na+ in com at (15.97, -18.04, -52.49).
+Placed Cl- in com at (-43.48, -1.87, -49.53).
+0: Placed Na+ in com at (66.43, 29.09, -27.59).
+Placed Cl- in com at (-66.57, 50.71, -68.91).
+0: Placed Na+ in com at (64.44, 20.83, 51.00).
+Placed Cl- in com at (-59.25, -19.89, -37.90).
+0: Placed Na+ in com at (-2.10, -30.42, 65.39).
+Placed Cl- in com at (45.87, 3.67, 26.10).
+0: Placed Na+ in com at (1.12, -58.41, 11.49).
+Placed Cl- in com at (-61.82, -3.50, 40.26).
+0: Placed Na+ in com at (-36.01, 62.82, -21.26).
+Placed Cl- in com at (48.40, -10.09, -59.64).
+0: Placed Na+ in com at (-8.34, 20.03, -44.51).
+Placed Cl- in com at (-38.92, 27.68, -50.56).
+0: Placed Na+ in com at (1.12, -20.86, -44.84).
+Placed Cl- in com at (-18.10, -66.32, -54.64).
+0: Placed Na+ in com at (30.78, 13.43, 56.03).
+Placed Cl- in com at (24.82, -38.78, -31.62).
+0: Placed Na+ in com at (-55.37, -65.90, -10.93).
+Placed Cl- in com at (5.36, 20.58, 27.76).
+0: Placed Na+ in com at (-24.48, 56.84, -18.61).
+Placed Cl- in com at (-2.38, -52.69, 14.55).
+0: Placed Na+ in com at (54.46, 10.67, 52.83).
+Placed Cl- in com at (-34.68, -41.92, -23.93).
+0: Placed Na+ in com at (-31.00, 25.91, 47.53).
+Placed Cl- in com at (6.10, -48.39, -23.64).
+0: Placed Na+ in com at (10.11, -46.01, -8.82).
+Placed Cl- in com at (-14.11, 66.88, 39.10).
+0: Placed Na+ in com at (-0.41, 36.44, 51.50).
+Placed Cl- in com at (29.63, 40.08, 23.21).
+0: Placed Na+ in com at (-10.83, 11.22, -58.09).
+Placed Cl- in com at (35.15, -17.68, 38.69).
+0: Placed Na+ in com at (50.73, -41.85, 52.50).
+Placed Cl- in com at (-6.74, -15.16, -45.47).
+0: Placed Na+ in com at (42.91, -35.75, -47.34).
+Placed Cl- in com at (-52.46, -51.60, -47.52).
+0: Placed Na+ in com at (40.08, 61.91, 23.39).
+Placed Cl- in com at (-17.74, -19.56, -35.30).
+0: Placed Na+ in com at (-49.98, -54.50, -31.62).
+Placed Cl- in com at (42.41, 44.08, 35.11).
+0: Placed Na+ in com at (-4.13, 24.67, -40.60).
+Placed Cl- in com at (67.17, 21.31, 4.44).
+0: Placed Na+ in com at (-56.77, 54.14, -18.55).
+Placed Cl- in com at (49.14, 59.04, 25.92).
+0: Placed Na+ in com at (62.70, 53.35, -57.40).
+Placed Cl- in com at (8.07, -50.49, 40.38).
+0: Placed Na+ in com at (-17.23, 62.82, -40.03).
+Placed Cl- in com at (53.52, 38.29, -33.71).
+0: Placed Na+ in com at (28.55, 36.43, 59.39).
+Placed Cl- in com at (61.92, 44.17, 38.02).
+0: Placed Na+ in com at (-7.20, -29.39, -63.66).
+Placed Cl- in com at (4.71, 22.94, 61.98).
+0: Placed Na+ in com at (-26.64, 52.33, 63.12).
+Placed Cl- in com at (-41.57, -39.50, -23.62).
+0: Placed Na+ in com at (-13.02, 31.76, 35.69).
+Placed Cl- in com at (53.40, -1.11, -19.13).
+0: Placed Na+ in com at (50.37, 19.11, -10.21).
+Placed Cl- in com at (-25.32, -51.56, 32.26).
+0: Placed Na+ in com at (17.73, 32.55, 53.71).
+Placed Cl- in com at (39.33, -42.99, 45.37).
+0: Placed Na+ in com at (-44.73, -1.29, 52.28).
+Placed Cl- in com at (35.46, 34.82, 28.44).
+0: Placed Na+ in com at (-32.19, -54.52, 46.53).
+Placed Cl- in com at (53.14, 22.49, -14.48).
+0: Placed Na+ in com at (44.02, -36.45, -19.19).
+Placed Cl- in com at (-7.92, 21.31, -51.88).
+0: Placed Na+ in com at (8.01, 61.16, 47.39).
+Placed Cl- in com at (-57.58, 17.98, -50.73).
+0: Placed Na+ in com at (-16.12, -26.96, 22.58).
+Placed Cl- in com at (28.33, -43.34, -46.36).
+0: Placed Na+ in com at (-28.33, 36.29, -63.87).
+Placed Cl- in com at (-41.28, -61.69, -12.81).
+0: Placed Na+ in com at (-65.55, 31.76, 28.74).
+Placed Cl- in com at (4.91, 43.89, -6.89).
+0: Placed Na+ in com at (60.85, -23.07, -15.62).
+Placed Cl- in com at (-14.06, 22.94, 5.65).
+0: Placed Na+ in com at (6.10, -67.16, -42.42).
+Placed Cl- in com at (-15.88, -66.64, 24.38).
+0: Placed Na+ in com at (62.09, 23.08, -34.47).
+Placed Cl- in com at (37.11, -2.19, 37.77).
+0: Placed Na+ in com at (-64.19, 14.78, -11.98).
+Placed Cl- in com at (-40.11, -60.25, -25.39).
+0: Placed Na+ in com at (-35.77, 32.11, 7.82).
+Placed Cl- in com at (-49.27, 52.92, 21.84).
+0: Placed Na+ in com at (-8.42, -39.32, 27.13).
+Placed Cl- in com at (61.68, -47.09, -19.61).
+0: Placed Na+ in com at (-51.42, -68.76, -44.44).
+Placed Cl- in com at (-65.45, -14.10, -22.96).
+0: Placed Na+ in com at (-22.05, 55.21, -11.38).
+Placed Cl- in com at (-48.49, -27.39, 5.80).
+0: Placed Na+ in com at (-1.68, -46.33, -44.03).
+Placed Cl- in com at (61.00, 68.13, -66.95).
+0: Placed Na+ in com at (46.03, 38.97, 60.19).
+Placed Cl- in com at (-61.82, -41.05, 40.26).
+0: Placed Na+ in com at (4.52, -15.29, -62.84).
+Placed Cl- in com at (7.83, 47.71, 24.57).
+0: Placed Na+ in com at (-30.49, 15.37, 59.39).
+Placed Cl- in com at (19.44, -28.77, 1.68).
+0: Placed Na+ in com at (15.44, -24.64, -4.90).
+Placed Cl- in com at (-27.44, -46.01, 28.73).
+0: Placed Na+ in com at (52.80, 51.51, 1.47).
+Placed Cl- in com at (14.75, -39.50, 32.70).
+0: Placed Na+ in com at (38.05, 64.51, 29.28).
+Placed Cl- in com at (-63.06, 41.16, 48.40).
+0: Placed Na+ in com at (-24.86, -18.44, 31.64).
+Placed Cl- in com at (-62.65, 31.17, 65.10).
+0: Placed Na+ in com at (69.01, 37.88, 12.87).
+Placed Cl- in com at (49.53, 64.86, -48.25).
+0: Placed Na+ in com at (-61.91, -4.30, 33.72).
+Placed Cl- in com at (-48.92, -53.97, 10.84).
+0: Placed Na+ in com at (-36.43, -39.64, -44.84).
+Placed Cl- in com at (37.11, 35.36, -37.33).
+0: Placed Na+ in com at (54.65, -65.10, -25.25).
+Placed Cl- in com at (-54.16, 65.10, 33.83).
+0: Placed Na+ in com at (-9.46, 2.11, 35.68).
+Placed Cl- in com at (42.18, 30.92, 42.05).
+0: Placed Na+ in com at (19.82, -23.34, -51.11).
+Placed Cl- in com at (-44.09, -14.02, 13.48).
+0: Placed Na+ in com at (11.57, -66.94, 11.44).
+Placed Cl- in com at (-39.46, -41.25, -32.62).
+0: Placed Na+ in com at (-14.62, 58.41, 59.19).
+Placed Cl- in com at (27.79, -23.02, 55.67).
+0: Placed Na+ in com at (-45.74, -12.98, 66.51).
+Placed Cl- in com at (36.22, 48.22, -15.16).
+0: Placed Na+ in com at (-11.16, -16.11, -36.10).
+Placed Cl- in com at (19.95, -52.68, 45.27).
+0: Placed Na+ in com at (-50.56, 60.62, -15.69).
+Placed Cl- in com at (-44.09, 61.08, 51.03).
+0: Placed Na+ in com at (38.08, 49.18, -44.91).
+Placed Cl- in com at (67.23, -4.00, -11.98).
+0: Placed Na+ in com at (65.97, -51.65, -4.19).
+Placed Cl- in com at (65.00, -57.14, -31.13).
+0: Placed Na+ in com at (-42.09, -66.76, -0.67).
+Placed Cl- in com at (7.62, -32.33, -2.06).
+0: Placed Na+ in com at (-39.95, 57.42, 1.14).
+Placed Cl- in com at (-32.40, 63.25, 6.71).
+0: Placed Na+ in com at (59.49, 54.87, 37.31).
+Placed Cl- in com at (-47.10, -19.06, -59.65).
+0: Placed Na+ in com at (-19.88, 61.00, -8.49).
+Placed Cl- in com at (-25.57, 27.31, 26.85).
+0: Placed Na+ in com at (-65.81, -56.66, -18.95).
+Placed Cl- in com at (39.33, 50.88, 7.82).
+0: Placed Na+ in com at (58.86, 24.36, 42.17).
+Placed Cl- in com at (-60.48, -26.95, 24.60).
+0: Placed Na+ in com at (43.74, -65.53, -67.00).
+Placed Cl- in com at (58.86, -31.97, 42.17).
+0: Placed Na+ in com at (-24.73, 0.33, 64.88).
+Placed Cl- in com at (-50.96, 46.78, -57.16).
+0: Placed Na+ in com at (-9.00, -38.67, 3.07).
+Placed Cl- in com at (-67.53, 24.77, -31.84).
+0: Placed Na+ in com at (-20.05, 67.29, 19.55).
+Placed Cl- in com at (-10.70, -31.71, 2.83).
+0: Placed Na+ in com at (38.44, -65.29, -1.30).
+Placed Cl- in com at (51.68, -4.06, 46.29).
+> 
+> saveamberparm com complex_solvated.prmtop complex_solvated.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 3580 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	2
+	NMET	2
+	TPP	1
+	WAT	77534
+  )
+ (no restraints)
+> 
+> savePdb com initial_system_solvated.pdb
+Writing pdb file: initial_system_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/software/ambertools/22/amber22/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+> 
+ quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 9; Notes = 1.

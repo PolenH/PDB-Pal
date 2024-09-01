@@ -1,0 +1,30 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+loadamberparams	frcmod.ionslm_1264_opc
+
+loadamberparams TPP.frcmod
+loadamberparams LIG.frcmod
+
+TPP = loadMol2 TPP.mol2
+LIG = loadMol2 LIG.mol2
+
+protein = loadPDB protein_amber.pdb
+mg = loadPDB MG_amber.pdb
+water = loadPDB solvent_amber.pdb
+
+com = combine {protein mg water TPP LIG}
+
+saveamberparm com complex_dry.prmtop complex_dry.inpcrd
+
+savePdb com initial_system_dry.pdb
+
+solvatebox com TIP3PBOX 12.0 iso
+addIonsRand com  Na+ 0
+addIonsRand com Na+ 82 Cl- 82
+
+saveamberparm com complex_solvated.prmtop complex_solvated.inpcrd
+
+savePdb com initial_system_solvated.pdb
+
+quit

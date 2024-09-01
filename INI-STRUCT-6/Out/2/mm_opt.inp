@@ -1,0 +1,14 @@
+! L-Opt MM 
+% PAL NPROCS 20 END # Number of process to run on 
+% Maxcore 500 # maximum amount of memory per process that can be used. This number should be 75 percent of what is actually allocated so 5000/0.75~=6700M
+% MM 
+    ORCAFFFilename "complex_dry.ORCAFF.prms" # Converted amber to orca forcefield file 
+END
+*pdbfile -9 1 initial_system_dry.pdb # total charge of system, usually -10 but sometimes -9
+% Geom 
+    Maxiter 1000 
+    Frags
+       2 {469:500 832:847 1185:1198 1217:1240 1749:1762 14697:14740 14773:14796 15051:15074 15092:15140 15437:15443 15456:15485 15515:15535 15869:15882 15897:15966 17268:17324 17505:17507 17532:17534 18405:18407} end
+    RelaxFrags {2} end # relax only the atoms specified in group 2.
+    FixFrags {1} end # all other atoms are defined in group 1 by default, we are freezing these
+END

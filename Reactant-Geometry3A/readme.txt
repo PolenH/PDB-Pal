@@ -1,0 +1,2 @@
+In this project I relaxed the tail of the ligand (not the alpha-keto acid head) and the surrounding 3 A of protein atoms.
+This fixed any steric clashes and weird benzene structures not remaining planar
